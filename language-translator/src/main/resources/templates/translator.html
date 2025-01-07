@@ -207,7 +207,6 @@
                     toLang: $('#toLang').val()
                 };
 
-                // New AJAX code
                 $.ajax({
                     url: '/translate',
                     type: 'POST',
@@ -215,16 +214,11 @@
                     data: JSON.stringify(formData),
                     success: function(response) {
                         try {
-                            if (response.errors) {
-                                // Display validation errors
-                                showErrors(response.errors);
+                            const result = JSON.parse(response);
+                            if (result.responseData && result.responseData.translatedText) {
+                                translatedText.val(result.responseData.translatedText);
                             } else {
-                                const result = JSON.parse(response.translatedText);
-                                if (result.responseData && result.responseData.translatedText) {
-                                    translatedText.val(result.responseData.translatedText);
-                                } else {
-                                    throw new Error('Invalid response format');
-                                }
+                                throw new Error('Invalid response format');
                             }
                         } catch (error) {
                             showErrors(['Translation failed: ' + error.message]);
@@ -239,15 +233,12 @@
                 });
             });
 
-            // Add the new showErrors function
             function showErrors(errorMessages) {
                 const errorDiv = $('<div>')
                     .addClass('alert alert-danger alert-dismissible fade show')
                     .append(
                         $('<ul>').append(
-                            errorMessages.map(msg => 
-                                $('<li>').text(msg)
-                            )
+                            errorMessages.map(msg => $('<li>').text(msg))
                         )
                     )
                     .append(
@@ -260,14 +251,10 @@
                             })
                     );
 
-                // Remove any existing error messages
                 $('.alert-danger').remove();
-
-                // Add the new error message at the top of the form
                 $('#translationForm').before(errorDiv);
             }
 
-            // Keep your existing clear button and textarea handlers
             clearBtn.on('click', function() {
                 textToTranslate.val('');
                 translatedText.val('');
