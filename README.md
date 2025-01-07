@@ -73,3 +73,32 @@ A modern, secure, and user-friendly language translation application built with 
    ```bash
    git clone https://github.com/deepak2testing/translator.git
    cd translator
+Build the Project
+
+bash
+mvn clean install
+Run the Application
+
+bash
+mvn spring-boot:run
+Access the Application
+Open your browser and go to http://localhost:8080
+
+📚 API Usage
+Translation API
+Endpoint: /translate
+Method: POST
+Request Body: JSON
+JSON
+{
+  "text": "Hello",
+  "fromLang": "en",
+  "toLang": "es"
+}
+Response Body: JSON
+JSON
+{
+  "responseData": {
+    "translatedText": "Hola"
+  }
+}
