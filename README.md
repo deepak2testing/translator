@@ -4,8 +4,8 @@
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.7.0-green.svg)
 ![Java](https://img.shields.io/badge/Java-17-orange.svg)
-![HTML](https://img.shields.io/badge/HTML-59.8%25-red.svg)
-![JavaScript](https://img.shields.io/badge/JavaScript-18%25-yellow.svg)
+![HTML](https://img.shields.io/badge/HTML-56.1%25-red.svg)
+![JavaScript](https://img.shields.io/badge/JavaScript-22.2%25-yellow.svg)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0-purple.svg)
 
 A modern, secure, and user-friendly language translation application built with Spring Boot and powered by MyMemory Translation API.
@@ -71,5 +71,5 @@ A modern, secure, and user-friendly language translation application built with 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/deepak2noob/Language_traslator_v2.git
-   cd Language_traslator_v2
+   git clone https://github.com/deepak2testing/translator.git
+   cd translator
